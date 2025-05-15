@@ -34,8 +34,28 @@ header nav ul li a {
     font-size: 1.1em;
 }
 
-section {
+section  {
     padding: 50px 20px;
+    text-align: center;
+}
+section#login  {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section#Registro  {
+    padding: 0px 0px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* espacio entre label y select */
+}
+
+h2#Registro  {
+    padding: 0px 0px;
     text-align: center;
 }
 
@@ -91,6 +111,8 @@ form button {
     padding: 12px;
     font-size: 1.2em;
 }
+
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {

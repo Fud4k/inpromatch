@@ -1,42 +1,47 @@
 <?php
-
 session_start();
-require 'db.php'; // Incluye el archivo de conexión a la base de datos.
+require 'db.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST["correo"];
-    $password = $_POST["password"];
+    $correo = trim($_POST["correo"]);
+    $password = trim($_POST["password"]);
 
-    // Consulta para verificar el correo en la base de datos
+    // Consulta para verificar el correo
     $sql = "SELECT id, tipo, password FROM usuarios WHERE correo = :correo";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([":correo" => $correo]);
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Depuración para verificar valores reales
+    echo "Correo ingresado: $correo<br>";
+    echo "Password ingresado: $password<br>";
+    echo "Password en la BD: " . ($usuario ? $usuario["password"] : "Usuario no encontrado") . "<br>";
+
     if ($usuario && password_verify($password, $usuario["password"])) {
-        // Si las credenciales son correctas, guarda la sesión
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["tipo"] = $usuario["tipo"];
 
-        // Redirige según el tipo de usuario
-        if ($usuario["tipo"] == "estudiante") {
+        if ($usuario["tipo"] === "estudiante") {
             header("Location: dashboard_estudiante.php");
         } else {
             header("Location: dashboard_empresa.php");
         }
         exit();
     } else {
-        echo "Credenciales incorrectas. <a href='login.php'>Intentar de nuevo</a>";
+        echo "❌ La contraseña es incorrecta. <a href='login.php'>Intentar de nuevo</a>";
     }
 }
 ?>
 
+
+
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="registro.html">Registro</a></li>
+                <li><a href="registro.php">Registro</a></li>
             </ul>
         </nav>
     </header>
@@ -68,7 +73,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <button type="submit">Iniciar sesión</button>
         </form>
-        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        <?php if (!empty($mensajeError)): ?>
+            <div style="color: red; margin-top: 10px;">
+                <?php echo $mensajeError; ?>
+            </div>
+        <?php endif; ?>
+
+        <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
     </section>
 
     <footer>

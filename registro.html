@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <h1>InProMatch</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="login.php">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
     <h2>Registro de Usuario</h2>
     <form action="registro.php" method="POST" enctype="multipart/form-data">
         <label for="nombre">Nombre Completo:</label>
@@ -34,6 +45,7 @@
         <input type="text" id="universidad" name="universidad">
 
         <button type="submit">Registrarse</button>
+        
     </form>
 </body>
 </html>

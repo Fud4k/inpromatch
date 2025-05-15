@@ -13,8 +13,8 @@ if (isset($_SESSION["usuario_id"])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE php>
+<php lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@ if (isset($_SESSION["usuario_id"])) {
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#ofertas">Ofertas</a></li>
                 <li><a href="login.php">Iniciar sesión</a></li>
-                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="registro.php">Registrarse</a></li>
             </ul>
         </nav>
     </header>
@@ -47,7 +47,7 @@ if (isset($_SESSION["usuario_id"])) {
     <section id="ofertas">
         <h2>Ofertas de Pasantías</h2>
         <p>Explora las ofertas de diferentes empresas o postúlate a las que más te interesen.</p>
-        <button><a href="registro.html">Regístrate para Postularte</a></button>
+        <button><a href="registro.php">Regístrate para Postularte</a></button>
     </section>
 
     <footer>
@@ -55,4 +55,4 @@ if (isset($_SESSION["usuario_id"])) {
     </footer>
 
 </body>
-</html>
+</php>
