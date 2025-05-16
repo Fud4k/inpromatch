@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$dbname = 'inpromatch'; // Nombre de tu base de datos
-$username = 'root';         // Tu usuario de MySQL
-$password = '';             // Tu contraseña de MySQL
+$host = 'sql305.infinityfree.com';
+$dbname = 'if0_38995162_inpromatch'; // Nombre de tu base de datos
+$username = 'if0_38995162';         // Tu usuario de MySQL
+$password = 'inpromatch';             // Tu contraseña de MySQL
 
 try {
     // Crear conexión a la base de datos
