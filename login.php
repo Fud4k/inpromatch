@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Consulta para verificar el correo en la base de datos
-    $sql = "SELECT id, tipo, password FROM usuarios WHERE correo = :correo";
+    $sql = "SELECT id, tipo, nombre, password FROM usuarios WHERE correo = :correo";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([":correo" => $correo]);
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Si las credenciales son correctas, guarda la sesión
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["tipo"] = $usuario["tipo"];
-
+        $_SESSION["nombre"] = $usuario["nombre"];
         // Redirige según el tipo de usuario
         if ($usuario["tipo"] == "estudiante") {
             header("Location: dashboard_estudiante.php");
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="registro.html">Registro</a></li>
+                <li><a href="registro.php">Registro</a></li>
             </ul>
         </nav>
     </header>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <button type="submit">Iniciar sesión</button>
         </form>
-        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
     </section>
 
     <footer>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario_id"]) || $_SESSION["tipo"] !== "empresa") {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 require 'db.php'; // Conexión a la base de datos
@@ -22,24 +22,41 @@ $ofertas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2>Bienvenido, <?php echo $_SESSION["nombre"]; ?>!</h2>
-    <h3>Tus ofertas publicadas</h3>
+    <header>
+        <div class="logo">
+            <h1>InProMatch</h1>
+        </div>
+        <nav>
+            <ul>
+                <h2>Bienvenido, <?php echo $_SESSION["nombre"]; ?>!</h2>
+                <li><a href="gestionar_postulaciones.php">Postulaciones</a></li>
+            </ul>
+        </nav>
+    </header>
     
-    <a href="crear_oferta.html">➕ Crear Nueva Oferta</a>
-
-    <ul>
+    <h3>Tus ofertas publicadas</h3>
+    <a href="crear_oferta.php" class="btn-crear">➕ Crear Nueva Oferta</a>
+    <section id="D_emp">
+        <form action="" method="post" id="postForm">
+        <ul>
         <?php foreach ($ofertas as $oferta): ?>
             <li>
                 <h4><?php echo $oferta["titulo"]; ?></h4>
                 <p><?php echo $oferta["descripcion"]; ?></p>
                 <p><strong>Requisitos:</strong> <?php echo $oferta["requisitos"]; ?></p>
                 <p><strong>Duración:</strong> <?php echo $oferta["duracion"]; ?></p>
-                <a href="editar_oferta.php?id=<?php echo $oferta['id']; ?>">✏️ Editar</a>
-                <a href="eliminar_oferta.php?id=<?php echo $oferta['id']; ?>" onclick="return confirm('¿Seguro que deseas eliminar esta oferta?')">🗑️ Eliminar</a>
+                <a class="btn-eyd" href="editar_oferta.php?id=<?php echo $oferta['id']; ?>">✏️ Editar</a>
+                <a class="btn-eyd" href="eliminar_oferta.php?id=<?php echo $oferta['id']; ?>" onclick="return confirm('¿Seguro que deseas eliminar esta oferta?')">🗑️ Eliminar</a>
             </li>
         <?php endforeach; ?>
-    </ul>
+        </ul></form>
+        
+    </section>
+    <a href="logout.php" class="btn-crear">Cerrar sesión</a>
+    <footer>
+        <p>&copy; 2025 InProMatch. Todos los derechos reservados.</p>
+    </footer>
 
-    <a href="logout.php">Cerrar sesión</a>
+    <script src="js/script.js"></script>
 </body>
 </html>

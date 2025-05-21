@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario_id"]) || $_SESSION["tipo"] !== "estudiante") {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 require 'db.php';

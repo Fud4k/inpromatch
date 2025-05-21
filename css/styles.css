@@ -33,11 +33,21 @@ header nav ul li a {
     text-decoration: none;
     font-size: 1.1em;
 }
+section#D_emp {
+    padding: 20px 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    margin-left: 40px; /* se separa del borde izquierdo */
+    margin-right: 100px; /* opcional, para que no se estire a la derecha */
+     /*width:max-content; opcional, para que no ocupe todo el ancho */
+    border-radius: 30px;
+}
 
 section {
     padding: 50px 20px;
     text-align: center;
 }
+
 
 button, .button {
     background-color: #1e3d58;
@@ -51,6 +61,35 @@ button, .button {
 
 button:hover, .button:hover {
     background-color: #f4511e;
+}
+
+.btn-crear {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #0774b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-crear:hover {
+    background-color: #d73c10;
+}
+.btn-eyd {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #0774b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eyd:hover {
+    background-color: #d73c10;
 }
 
 footer {
@@ -70,6 +109,15 @@ form {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+form#postForm {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    border-radius: 50px;
+    
 }
 
 form label {
