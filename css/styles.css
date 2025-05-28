@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background-color: #1e3d58;
-    color: white;
+    background-color: #d8eaff;
+    color: black;
     padding: 20px;
     text-align: center;
 }
@@ -42,6 +42,7 @@ section#D_emp {
      /*width:max-content; opcional, para que no ocupe todo el ancho */
     border-radius: 30px;
 }
+
 
 section {
     padding: 50px 20px;
@@ -139,6 +140,212 @@ form button {
     padding: 12px;
     font-size: 1.2em;
 }
+/* Estructura principal */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #f5f7fa;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-logo {
+    background-color: #e0ecff;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.sidebar-btn {
+    display: block;
+    background-color: #d8eaff;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sidebar-btn:hover {
+    background-color: #c1dbff;
+}
+
+.cerrar-sesion {
+    background-color: #ffe0e0;
+}
+
+.cerrar-sesion:hover {
+    background-color: #ffcaca;
+}
+
+/* Contenido derecho */
+.contenido {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Tarjetas de oferta */
+.oferta-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Contenedor con scroll */
+.contenedor-ofertas {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f5f5f5;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Tarjeta de cada oferta */
+.oferta-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.oferta-card:hover {
+    transform: scale(1.01);
+}
+
+/* Botones de acción */
+.botones-oferta {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn-postular {
+    background-color: #4da3ff;
+    color: white;
+    padding: 6px 70px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-chat {
+    display: inline-flex;
+    align-items: center;
+    background-color: #7cb8ff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-chat img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+
+/*dbEmpresa
+/* Layout y contenido */
+.layout {
+    display: flex;
+}
+
+.contenido {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Botones para ofertas */
+.btn-editar {
+    background-color: #4da3ff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.btn-eliminar {
+    background-color: #ff6666;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-editar:hover {
+    background-color: #3399ff;
+}
+
+.btn-eliminar:hover {
+    background-color: #e60000;
+}
+
+.btn-crear {
+    display: inline-block;
+    margin: 10px 0;
+    background-color: #0059b3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Oferta card */
+.oferta-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {

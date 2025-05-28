@@ -1,37 +1,31 @@
 <?php
 session_start();
-require 'validar_sesion.php';  // Verificar si el estudiante está logueado
-
-// Conectar a la base de datos
 require 'db.php';
 
-// Obtener las ofertas disponibles (suponiendo que hay una tabla 'ofertas' en la base de datos)
-$sql = "SELECT * FROM ofertas";
-$stmt = $pdo->query($sql);
-$ofertas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
+if (!isset($_SESSION['usuario_id']) || !isset($_POST['oferta_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postúlate a una Oferta</title>
-</head>
-<body>
-    <h2>Postúlate a una Oferta de Pasantía</h2>
-    <form action="procesar_postulacion.php" method="POST">
-        <label for="oferta_id">Oferta:</label>
-        <select id="oferta_id" name="oferta_id" required>
-            <?php foreach ($ofertas as $oferta): ?>
-                <option value="<?= $oferta['id'] ?>"><?= $oferta['nombre'] ?> - <?= $oferta['empresa'] ?></option>
-            <?php endforeach; ?>
-        </select>
+$usuario_id = $_SESSION['usuario_id'];
+$oferta_id = $_POST['oferta_id'];
 
-        <label for="nota">Mensaje opcional para la empresa:</label>
-        <textarea id="nota" name="nota" rows="4" placeholder="Escribe un mensaje opcional..."></textarea>
+// Evitar duplicación (opcional)
+$sqlCheck = "SELECT COUNT(*) FROM postulaciones WHERE usuario_id = :usuario_id AND oferta_id = :oferta_id";
+$stmtCheck = $pdo->prepare($sqlCheck);
+$stmtCheck->execute(['usuario_id' => $usuario_id, 'oferta_id' => $oferta_id]);
+if ($stmtCheck->fetchColumn() > 0) {
+    header("Location: ofertas.php?ya_postulado=1");
+    exit();
+}
 
-        <button type="submit">Postularse</button>
-    </form>
-</body>
-</html>
+// Insertar postulación
+$sql = "INSERT INTO postulaciones (usuario_id, oferta_id, fecha) VALUES (:usuario_id, :oferta_id, NOW())";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    'usuario_id' => $usuario_id,
+    'oferta_id' => $oferta_id
+]);
+
+header("Location: ofertas.php?postulacion=ok");
+exit();
