@@ -26,7 +26,7 @@ if (isset($_SESSION["usuario_id"])) {
 
     <header>
         <div class="logo">
-            <h1>InProMatch</h1>
+            <h1>InProMatch-Prueba</h1>
             <p>Conecta empresas con estudiantes para pasantías y horas sociales</p>
         </div>
         <nav>
