@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         exit();
     } else {
-        echo "Credenciales incorrectas. <a href='login.php'>Intentar de nuevo</a>";
+        echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+        //echo "Credenciales incorrectas. <a href='login.php'>Intentar de nuevo</a>";
     }
 }
 ?>
@@ -42,6 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - InProMatch</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="views/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="views/bower_components/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 
