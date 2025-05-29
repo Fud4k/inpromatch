@@ -1,5 +1,6 @@
 <?php
-$host = 'localhost';
+//$host = 'localhost:3307';
+$host = 'localhost:3306';
 $dbname = 'inpromatch'; // Nombre de tu base de datos
 $username = 'root';         // Tu usuario de MySQL
 $password = '';             // Tu contraseña de MySQL
