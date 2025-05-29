@@ -29,7 +29,7 @@ $ofertas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <img src="img/logo/logo.png" alt="Logo de InProMatch">
             </div>
             <h2>Bienvenido, <?php echo $_SESSION["nombre"]; ?>!</h2>
-            <a class="sidebar-btn" href="perfil.php">👤 Perfil Empresarial</a>
+            <a class="sidebar-btn" href="#">👤 Perfil Empresarial</a>
             <a class="sidebar-btn" href="gestionar_postulaciones.php">📋 Postulaciones</a>
             <a class="sidebar-btn" href="mensajes.php">💬 Mensajes</a>
             <a class="sidebar-btn cerrar-sesion" href="logout.php">🚪 Cerrar sesión</a>
