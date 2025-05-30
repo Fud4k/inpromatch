@@ -2,6 +2,10 @@
 session_start();
 require 'db.php';
 
+if (!isset($_SESSION["usuario_id"])) {
+    exit("Sesión no iniciada");
+}
+
 $emisor_id = $_SESSION["usuario_id"];
 $receptor_id = $_POST["receptor_id"] ?? null;
 $mensaje = trim($_POST["mensaje"] ?? "");

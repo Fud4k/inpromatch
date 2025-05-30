@@ -2,13 +2,21 @@
 session_start();
 require 'db.php';
 
+if (!isset($_SESSION['usuario_id'])) {
+    exit("Sesión no iniciada");
+}
+
 $usuario_id = $_SESSION['usuario_id'];
 $receptor_id = $_GET['receptor_id'] ?? null;
 
 if ($receptor_id) {
-    $sql = "SELECT timestamp FROM escribiendo WHERE emisor_id = :rid AND receptor_id = :uid";
+    $sql = "SELECT timestamp FROM escribiendo 
+            WHERE emisor_id = :rid AND receptor_id = :uid";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':rid' => $receptor_id, ':uid' => $usuario_id]);
+    $stmt->execute([
+        ':rid' => $receptor_id,
+        ':uid' => $usuario_id
+    ]);
     $row = $stmt->fetch();
 
     if ($row) {

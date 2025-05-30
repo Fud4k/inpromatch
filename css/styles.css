@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #d8eaff;
+    
     color: black;
     padding: 20px;
     text-align: center;
@@ -34,13 +34,25 @@ header nav ul li a {
     font-size: 1.1em;
 }
 section#D_emp {
-    padding: 20px 20px;
-    background-color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    background-color: rgba(177, 226, 255, 0.872);
     text-align: left;
     margin-left: 40px; /* se separa del borde izquierdo */
-    margin-right: 100px; /* opcional, para que no se estire a la derecha */
+    margin-right: 500px; /* opcional, para que no se estire a la derecha */
      /*width:max-content; opcional, para que no ocupe todo el ancho */
     border-radius: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+#BG_empresa h3,
+#BG_empresa .oferta-card {
+    background-color: rgba(88, 75, 210, 0.25); /* efecto blanco translúcido */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 
@@ -58,6 +70,27 @@ button, .button {
     cursor: pointer;
     font-size: 1.1em;
     border-radius: 5px;
+}
+/*section Index*/
+section#BG {
+    background-image: url('../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg');
+    background-size:cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    padding-left: 300px; /* espacio para el menú lateral */
+}
+
+section#inicio,
+section#oferta {
+    background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    padding: 20px;
+    margin: 100px;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    margin-left: 30px;
 }
 
 button:hover, .button:hover {
@@ -145,21 +178,99 @@ form button {
     display: flex;
     min-height: 100vh;
 }
+/*segunda opcion de barra*/
+.sidebar2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar-logo2 img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.sidebar2 h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #00bcd4;
+}
+
+.sidebar-btn2 {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.sidebar-btn2-log {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-btn2-log:hover {
+    background-color: #0288d1;
+}
+.sidebar-btn2:hover {
+    background-color: #0288d1;
+}
+
+header {
+    padding: 10px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #ccc;
+}
+
 
 /* Sidebar */
 .sidebar {
     width: 250px;
-    background-color: #f5f7fa;
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 20px;
     height: 100vh;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sidebar-logo {
-    background-color: #e0ecff;
+    background-color: rgba(177, 226, 255, 0.872);
     border-radius: 12px;
     padding: 10px;
     margin-bottom: 20px;
@@ -176,13 +287,12 @@ form button {
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.2em;
-    color: #333;
+    color: #ffffff;
 }
 
 .sidebar-btn {
     display: block;
-    background-color: #d8eaff;
-    color: #1a1a1a;
+    color: #ffffff;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
@@ -190,15 +300,21 @@ form button {
     width: 100%;
     text-align: center;
     font-weight: bold;
-    transition: background-color 0.3s;
+    background-color: transparent;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
 
 .sidebar-btn:hover {
     background-color: #c1dbff;
 }
 
 .cerrar-sesion {
+    transition: background-color 0.3s ease;
     background-color: #ffe0e0;
+    color: #000000;
 }
 
 .cerrar-sesion:hover {
@@ -283,6 +399,21 @@ form button {
     height: 18px;
     margin-right: 6px;
 }
+/*bg de empresa*/
+#BG_empresa {
+    background-image: url('../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+
+
+
 
 
 /*dbEmpresa

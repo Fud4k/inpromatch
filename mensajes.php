@@ -220,7 +220,7 @@ $receptor_id = $_GET['receptor_id'] ?? ($usuarios[0]['id'] ?? null);
                     document.getElementById("mensaje").addEventListener("keydown", function(event) {
                         if (event.key === "Enter" && !event.shiftKey) {
                             event.preventDefault(); // Evita salto de línea
-                            document.getElementById("formulario-chat").dispatchEvent(new Event("submit")); // Dispara el envío
+                            
                         }
                     });
                 </script>

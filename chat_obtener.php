@@ -2,6 +2,10 @@
 session_start();
 require 'db.php';
 
+if (!isset($_SESSION["usuario_id"])) {
+    exit("Sesión no iniciada");
+}
+
 $usuario_id = $_SESSION["usuario_id"];
 $receptor_id = $_GET["receptor_id"] ?? null;
 
@@ -11,7 +15,7 @@ if (!$receptor_id || $receptor_id == $usuario_id) {
 
 $sql = "SELECT * FROM mensajes 
         WHERE (emisor_id = :uid AND receptor_id = :rid) 
-        OR (emisor_id = :rid AND receptor_id = :uid)
+           OR (emisor_id = :rid AND receptor_id = :uid)
         ORDER BY fecha ASC";
 
 $stmt = $pdo->prepare($sql);
@@ -26,3 +30,4 @@ foreach ($mensajes as $mensaje) {
     $clase = $mensaje['emisor_id'] == $usuario_id ? 'mensaje-propio' : 'mensaje-ajeno';
     echo "<div class='$clase'>" . htmlspecialchars($mensaje['mensaje']) . "</div>";
 }
+?>
