@@ -61,7 +61,7 @@ if (isset($_SESSION["usuario_id"])) {
         <section id="oferta">
             <h2>Ofertas de Pasantías</h2>
             <p>Explora las ofertas de diferentes empresas o postúlate a las que más te interesen.</p>
-            <button><a href="registro.php">Regístrate para Postularte</a></button>
+            <a href="registro.php" class="btn btn-primary">Regístrate para Postularte</a>
         </section>
     </section>
 

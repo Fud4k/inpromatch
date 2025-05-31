@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    
+
     color: black;
     padding: 20px;
     text-align: center;
@@ -33,13 +33,16 @@ header nav ul li a {
     text-decoration: none;
     font-size: 1.1em;
 }
+
 section#D_emp {
     padding: 20px 30px;
     background-color: rgba(177, 226, 255, 0.872);
     text-align: left;
-    margin-left: 40px; /* se separa del borde izquierdo */
-    margin-right: 500px; /* opcional, para que no se estire a la derecha */
-     /*width:max-content; opcional, para que no ocupe todo el ancho */
+    margin-left: 40px;
+    /* se separa del borde izquierdo */
+    margin-right: 500px;
+    /* opcional, para que no se estire a la derecha */
+    /*width:max-content; opcional, para que no ocupe todo el ancho */
     border-radius: 30px;
 
     display: flex;
@@ -47,9 +50,11 @@ section#D_emp {
     gap: 20px;
     justify-content: center;
 }
+
 #BG_empresa h3,
 #BG_empresa .oferta-card {
-    background-color: rgba(88, 75, 210, 0.25); /* efecto blanco translúcido */
+    background-color: rgba(88, 75, 210, 0.25);
+    /* efecto blanco translúcido */
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -62,28 +67,32 @@ section {
 }
 
 
-button, .button {
+button,
+.button {
     background-color: #1e3d58;
-    color:#ffffff;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 1.1em;
     border-radius: 5px;
 }
+
 /*section Index*/
 section#BG {
     background-image: url('../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     min-height: 100vh;
     position: relative;
-    padding-left: 300px; /* espacio para el menú lateral */
+    padding-left: 300px;
+    /* espacio para el menú lateral */
 }
 
 section#inicio,
 section#oferta {
-    background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* fondo semitransparente */
     padding: 20px;
     margin: 100px;
     border-radius: 50px;
@@ -93,7 +102,8 @@ section#oferta {
     margin-left: 30px;
 }
 
-button:hover, .button:hover {
+button:hover,
+.button:hover {
     background-color: #f4511e;
 }
 
@@ -111,6 +121,7 @@ button:hover, .button:hover {
 .btn-crear:hover {
     background-color: #d73c10;
 }
+
 .btn-eyd {
     display: inline-block;
     padding: 10px 10px;
@@ -144,6 +155,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
 form#postForm {
     max-width: 500px;
     margin: 0 auto;
@@ -151,7 +163,7 @@ form#postForm {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
     border-radius: 50px;
-    
+
 }
 
 form label {
@@ -160,7 +172,8 @@ form label {
     font-weight: bold;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -173,11 +186,13 @@ form button {
     padding: 12px;
     font-size: 1.2em;
 }
+
 /* Estructura principal */
 .layout {
     display: flex;
     min-height: 100vh;
 }
+
 /*segunda opcion de barra*/
 .sidebar2 {
     position: fixed;
@@ -187,7 +202,7 @@ form button {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-logo2 img {
@@ -212,6 +227,7 @@ form button {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+
 .sidebar-btn2-log {
     display: block;
     color: white;
@@ -227,6 +243,7 @@ form button {
 .sidebar-btn2-log:hover {
     background-color: #0288d1;
 }
+
 .sidebar-btn2:hover {
     background-color: #0288d1;
 }
@@ -263,7 +280,7 @@ footer {
     padding: 20px;
     height: 100vh;
     color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -346,7 +363,7 @@ footer {
     width: 90%;
     max-width: 1000px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Tarjeta de cada oferta */
@@ -356,7 +373,7 @@ footer {
     border-radius: 12px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
 }
 
@@ -399,6 +416,7 @@ footer {
     height: 18px;
     margin-right: 6px;
 }
+
 /*bg de empresa*/
 #BG_empresa {
     background-image: url('../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg');
@@ -478,18 +496,61 @@ footer {
 }
 
 
-/* Mobile Styles */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
+
+    /* Quitar el espacio lateral reservado y hacer el layout en una sola columna */
+    section#BG {
+        padding-left: 0;
     }
 
-    header nav ul li {
+    .sidebar2 {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        box-shadow: none;
+        padding: 15px;
+    }
+
+    .logo {
+        padding-top: 80%;
+        color: #fff;
+    }
+
+    .sidebar-logo2 img {
+        width: 120px;
+    }
+
+    .sidebar-btn2,
+    .sidebar-btn2-log {
+        display: inline-block;
+        margin: 5px;
+        width: auto;
+    }
+
+    header .logo h1 {
+        font-size: 1.8em;
+    }
+
+    section#inicio,
+    section#oferta {
+        margin: 20px;
+        font-size: 1em;
+    }
+
+    form,
+    form#postForm {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    button a {
         display: block;
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 30px 20px;
+        color: #ffffff;
+        text-decoration: none;
     }
 }
